@@ -59,14 +59,14 @@ export default function App() {
         </div>
       </header>
 
-      <main className="flex-grow flex flex-col items-center p-6 md:p-12 w-full">
+      <main className="flex-grow flex flex-col items-center p-4 sm:p-6 md:p-12 w-full">
         {view === 'landing' && (
-          <div className="w-full max-w-5xl mx-auto text-center space-y-12 mt-8 md:mt-16">
+          <div className="w-full max-w-5xl mx-auto text-center space-y-8 md:space-y-12 mt-4 md:mt-16">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF5F1F] text-white font-bold text-xs uppercase tracking-widest">
                 AI-Powered Career Guidance
               </div>
-              <h1 className="text-[60px] md:text-[90px] font-black leading-[0.85] tracking-tighter uppercase mb-6">
+              <h1 className="text-5xl sm:text-[60px] md:text-[90px] font-black leading-[0.85] tracking-tighter uppercase mb-6">
                 Map your <br className="hidden md:block" />
                 <span className="text-[#FF5F1F] italic">future.</span>
               </h1>

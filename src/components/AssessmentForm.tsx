@@ -99,7 +99,7 @@ export function AssessmentForm({ onSubmit, isLoading }: AssessmentFormProps) {
 
   return (
     <div className="w-full max-w-2xl mx-auto bg-white rounded-3xl border-2 border-[#1A1A1A] shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] overflow-hidden">
-      <div className="bg-[#F9F6F1] p-6 border-b-2 border-[#1A1A1A]">
+      <div className="bg-[#F9F6F1] p-4 sm:p-6 border-b-2 border-[#1A1A1A]">
         <div className="flex items-center justify-between mb-4">
           <span className="text-[10px] font-bold uppercase tracking-widest text-[#1A1A1A]/60">
             Step {step + 1} of {QUESTIONS.length}
@@ -108,21 +108,21 @@ export function AssessmentForm({ onSubmit, isLoading }: AssessmentFormProps) {
             {QUESTIONS.map((_, i) => (
               <div
                 key={i}
-                className={`h-2 rounded-full transition-all duration-300 ${i <= step ? 'w-8 bg-[#FF5F1F]' : 'w-2 bg-[#1A1A1A]/10'}`}
+                className={`h-2 rounded-full transition-all duration-300 ${i <= step ? 'w-4 sm:w-8 bg-[#FF5F1F]' : 'w-2 bg-[#1A1A1A]/10'}`}
               />
             ))}
           </div>
         </div>
-        <div className="flex items-center gap-4">
-          <div className="p-3 bg-white border-2 border-[#1A1A1A] shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] rounded-xl">
+        <div className="flex items-center gap-3 sm:gap-4">
+          <div className="p-2 sm:p-3 bg-white border-2 border-[#1A1A1A] shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] rounded-xl shrink-0">
             {currentQuestion.icon}
           </div>
-          <h2 className="text-2xl font-black uppercase text-[#1A1A1A]">{currentQuestion.title}</h2>
+          <h2 className="text-xl sm:text-2xl font-black uppercase text-[#1A1A1A]">{currentQuestion.title}</h2>
         </div>
-        <p className="mt-2 text-[#1A1A1A]/50 ml-16 text-sm font-medium">Select up to 3 options.</p>
+        <p className="mt-2 text-[#1A1A1A]/50 ml-12 sm:ml-16 text-sm font-medium">Select up to 3 options.</p>
       </div>
 
-      <div className="p-8">
+      <div className="p-4 sm:p-8">
         <motion.div
           key={step}
           initial={{ opacity: 0, x: 20 }}

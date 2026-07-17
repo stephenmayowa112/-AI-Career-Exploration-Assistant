@@ -28,14 +28,14 @@ export function ResultsDashboard({ result, onReset }: ResultsDashboardProps) {
           Back to Matches
         </button>
 
-        <div className="bg-white rounded-3xl p-8 border-2 border-[#1A1A1A] shadow-[8px_8px_0px_0px_rgba(26,26,26,1)]">
-          <div className="flex flex-col md:flex-row items-start justify-between gap-6 mb-10 pb-8 border-b-2 border-[#1A1A1A]/10">
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-[#1A1A1A] shadow-[8px_8px_0px_0px_rgba(26,26,26,1)]">
+          <div className="flex flex-col-reverse md:flex-row items-start justify-between gap-6 mb-10 pb-8 border-b-2 border-[#1A1A1A]/10">
             <div>
-              <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-[#1A1A1A] mb-4">{career.title}</h1>
-              <p className="text-xl font-medium text-[#1A1A1A]/70 leading-relaxed max-w-2xl">{career.description}</p>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter text-[#1A1A1A] mb-4">{career.title}</h1>
+              <p className="text-lg md:text-xl font-medium text-[#1A1A1A]/70 leading-relaxed max-w-2xl">{career.description}</p>
             </div>
-            <div className="w-20 h-20 rounded-2xl bg-[#FF5F1F] flex items-center justify-center shrink-0 border-2 border-[#1A1A1A] shadow-[4px_4px_0px_0px_rgba(26,26,26,1)]">
-              <Briefcase className="w-10 h-10 text-white" />
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-[#FF5F1F] flex items-center justify-center shrink-0 border-2 border-[#1A1A1A] shadow-[4px_4px_0px_0px_rgba(26,26,26,1)]">
+              <Briefcase className="w-8 h-8 md:w-10 md:h-10 text-white" />
             </div>
           </div>
 
@@ -120,8 +120,8 @@ export function ResultsDashboard({ result, onReset }: ResultsDashboardProps) {
         <div className="inline-flex items-center justify-center p-3 bg-[#FF5F1F]/10 text-[#FF5F1F] rounded-2xl mb-6">
           <Sparkles className="w-8 h-8" />
         </div>
-        <h2 className="text-[40px] md:text-[60px] font-black uppercase tracking-tighter leading-[0.85] text-[#1A1A1A] mb-4">Your Career Matches</h2>
-        <p className="text-xl text-[#1A1A1A]/70 font-medium">
+        <h2 className="text-4xl sm:text-[40px] md:text-[60px] font-black uppercase tracking-tighter leading-[0.85] text-[#1A1A1A] mb-4">Your Career Matches</h2>
+        <p className="text-lg md:text-xl text-[#1A1A1A]/70 font-medium">
           Based on your unique profile, here are the top paths where you're most likely to thrive.
         </p>
       </div>
