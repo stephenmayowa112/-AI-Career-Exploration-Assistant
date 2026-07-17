@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { CareerMatchResult } from '../types';
-import { Briefcase, BookOpen, Target, Sparkles, TrendingUp, CheckCircle2, ChevronRight, GraduationCap } from 'lucide-react';
+import { Briefcase, BookOpen, Target, Sparkles, TrendingUp, CheckCircle2, ChevronRight, GraduationCap, Heart } from 'lucide-react';
 import { Button } from './Button';
 import { useState } from 'react';
 
