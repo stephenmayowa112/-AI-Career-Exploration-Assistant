@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 import { createServer as createViteServer } from 'vite';
 import { GoogleGenAI } from '@google/genai';
-import { apiRouter } from './src/api';
+import matchCareersHandler from './api/match-careers';
 
 async function startServer() {
   const app = express();
@@ -11,7 +11,7 @@ async function startServer() {
   app.use(express.json());
 
   // API endpoints
-  app.use('/api', apiRouter);
+  app.post('/api/match-careers', matchCareersHandler);
 
   // Vite middleware for development
   if (process.env.NODE_ENV !== 'production') {

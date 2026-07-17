@@ -1,9 +1,6 @@
-import express from 'express';
 import { GoogleGenAI } from '@google/genai';
 
-export const apiRouter = express.Router();
-
-apiRouter.post('/match-careers', async (req, res) => {
+export default async function handler(req: any, res: any) {
   try {
     const { interests, strengths, subjects, personality, extra } = req.body;
     
@@ -101,17 +98,17 @@ apiRouter.post('/match-careers', async (req, res) => {
                 responseMimeType: 'application/json',
             }
           });
-          break; // Break the retry loop if successful
+          break;
         } catch (e: any) {
           lastError = e;
           attempt++;
           if (attempt >= maxRetries || (!e.message?.includes('503') && !e.message?.includes('429'))) {
-            break; // Break the retry loop if max retries reached or not a rate limit/capacity error
+            break;
           }
           await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
         }
       }
-      if (response) break; // Break the model loop if successful
+      if (response) break;
     }
 
     if (!response) {
@@ -125,7 +122,6 @@ apiRouter.post('/match-careers', async (req, res) => {
     res.json(parsedData);
   } catch (error) {
     console.error('Error generating career matches:', error);
-    // If we reach this outer catch block (e.g. JSON parsing fails, or some other unhandled exception), fallback to the mock response
     console.warn('Falling back to mock response due to unexpected error.');
     return res.json({
       careers: [
@@ -164,4 +160,4 @@ apiRouter.post('/match-careers', async (req, res) => {
       }
     });
   }
-});
+}
