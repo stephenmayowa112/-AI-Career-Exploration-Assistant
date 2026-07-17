@@ -57,10 +57,12 @@ export default function App() {
 
       <header className="h-20 flex items-center justify-between px-6 md:px-10 border-b border-[#1A1A1A]/10 sticky top-0 z-10 bg-[#F9F6F1]/70 backdrop-blur-md">
         <div className="max-w-6xl mx-auto flex items-center gap-4 w-full">
-          <div className="w-10 h-10 bg-[#FF5F1F] rounded-full flex items-center justify-center text-white font-bold">
-            <Compass className="w-6 h-6 text-white" />
-          </div>
-          <span className="font-black text-xl tracking-tighter uppercase text-[#1A1A1A]">CareerPath AI</span>
+          <button onClick={handleReset} className="flex items-center gap-4 group cursor-pointer border-none bg-transparent p-0 m-0 text-left">
+            <div className="w-10 h-10 bg-[#FF5F1F] rounded-full flex items-center justify-center text-white font-bold group-hover:scale-105 transition-transform">
+              <Compass className="w-6 h-6 text-white" />
+            </div>
+            <span className="font-black text-xl tracking-tighter uppercase text-[#1A1A1A]">CareerPath AI</span>
+          </button>
         </div>
       </header>
 
