@@ -28,7 +28,7 @@ export function ResultsDashboard({ result, onReset }: ResultsDashboardProps) {
           Back to Matches
         </button>
 
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-[#1A1A1A] shadow-[8px_8px_0px_0px_rgba(26,26,26,1)]">
+        <div className="bg-white/60 backdrop-blur-md rounded-3xl p-6 sm:p-8 border-2 border-[#1A1A1A] shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] relative z-10">
           <div className="flex flex-col-reverse md:flex-row items-start justify-between gap-6 mb-10 pb-8 border-b-2 border-[#1A1A1A]/10">
             <div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter text-[#1A1A1A] mb-4">{career.title}</h1>
@@ -133,10 +133,10 @@ export function ResultsDashboard({ result, onReset }: ResultsDashboardProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className={`rounded-3xl p-6 relative overflow-hidden flex flex-col group transition-transform hover:-translate-y-1 ${
+            className={`rounded-3xl p-6 relative overflow-hidden flex flex-col group transition-transform hover:-translate-y-1 backdrop-blur-md ${
               index === 0 
-                ? 'bg-[#1A1A1A] text-white border-2 border-[#1A1A1A] shadow-[8px_8px_0px_0px_rgba(255,95,31,1)] hover:shadow-[12px_12px_0px_0px_rgba(255,95,31,1)]' 
-                : 'bg-white text-[#1A1A1A] border-2 border-[#1A1A1A] shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] hover:shadow-[12px_12px_0px_0px_rgba(26,26,26,1)]'
+                ? 'bg-[#1A1A1A]/90 text-white border-2 border-[#1A1A1A] shadow-[8px_8px_0px_0px_rgba(255,95,31,1)] hover:shadow-[12px_12px_0px_0px_rgba(255,95,31,1)]' 
+                : 'bg-white/60 text-[#1A1A1A] border-2 border-[#1A1A1A] shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] hover:shadow-[12px_12px_0px_0px_rgba(26,26,26,1)]'
             }`}
           >
             <div className="flex justify-between items-start mb-6">
@@ -163,7 +163,7 @@ export function ResultsDashboard({ result, onReset }: ResultsDashboardProps) {
         ))}
       </div>
 
-      <div className="bg-white border-2 border-[#1A1A1A] rounded-3xl p-8 shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] mt-12">
+      <div className="bg-white/60 backdrop-blur-md border-2 border-[#1A1A1A] rounded-3xl p-8 shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] mt-12 relative z-10">
         <h3 className="text-2xl font-black uppercase text-[#1A1A1A] mb-8 flex items-center gap-3">
           <Target className="w-8 h-8 text-[#FF5F1F]" />
           Your Action Plan

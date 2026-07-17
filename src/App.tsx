@@ -49,8 +49,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F9F6F1] text-[#1A1A1A] font-sans selection:bg-[#FF5F1F] selection:text-white flex flex-col border-8 md:border-[16px] border-white box-border">
-      <header className="h-20 flex items-center justify-between px-6 md:px-10 border-b border-[#1A1A1A]/10 sticky top-0 z-10 bg-[#F9F6F1]">
+    <div className="min-h-screen bg-[#F9F6F1] text-[#1A1A1A] font-sans selection:bg-[#FF5F1F] selection:text-white flex flex-col border-8 md:border-[16px] border-white box-border relative overflow-hidden">
+      {/* Decorative background blobs for glassmorphism */}
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#FF5F1F]/30 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-500/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-[30%] left-[60%] w-[30%] h-[30%] bg-emerald-500/20 rounded-full blur-[100px] pointer-events-none" />
+
+      <header className="h-20 flex items-center justify-between px-6 md:px-10 border-b border-[#1A1A1A]/10 sticky top-0 z-10 bg-[#F9F6F1]/70 backdrop-blur-md">
         <div className="max-w-6xl mx-auto flex items-center gap-4 w-full">
           <div className="w-10 h-10 bg-[#FF5F1F] rounded-full flex items-center justify-center text-white font-bold">
             <Compass className="w-6 h-6 text-white" />
@@ -59,14 +64,14 @@ export default function App() {
         </div>
       </header>
 
-      <main className="flex-grow flex flex-col items-center p-4 sm:p-6 md:p-12 w-full">
+      <main className="flex-grow flex flex-col items-center p-4 sm:p-6 md:p-12 w-full relative z-10">
         {view === 'landing' && (
           <div className="w-full max-w-5xl mx-auto text-center space-y-8 md:space-y-12 mt-4 md:mt-16">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF5F1F] text-white font-bold text-xs uppercase tracking-widest">
                 AI-Powered Career Guidance
               </div>
-              <h1 className="text-5xl sm:text-[60px] md:text-[90px] font-black leading-[0.85] tracking-tighter uppercase mb-6">
+              <h1 className="text-5xl sm:text-[60px] md:text-[90px] font-black leading-[0.85] tracking-tighter uppercase mb-6 drop-shadow-sm">
                 Map your <br className="hidden md:block" />
                 <span className="text-[#FF5F1F] italic">future.</span>
               </h1>
@@ -78,7 +83,7 @@ export default function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto pt-8">
               <button 
                 onClick={() => handleStart('student')}
-                className="flex flex-col items-center p-8 bg-white border-2 border-[#1A1A1A] rounded-3xl shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(26,26,26,1)] transition-all group"
+                className="flex flex-col items-center p-8 bg-white/60 backdrop-blur-md border-2 border-[#1A1A1A] rounded-3xl shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(26,26,26,1)] transition-all group"
               >
                 <div className="w-16 h-16 bg-[#FF5F1F]/10 rounded-2xl flex items-center justify-center mb-6 text-[#FF5F1F]">
                   <Compass className="w-8 h-8" />
@@ -92,7 +97,7 @@ export default function App() {
 
               <button 
                 onClick={() => handleStart('parent')}
-                className="flex flex-col items-center p-8 bg-[#1A1A1A] text-white border-2 border-[#1A1A1A] rounded-3xl shadow-[8px_8px_0px_0px_rgba(255,95,31,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(255,95,31,1)] transition-all group"
+                className="flex flex-col items-center p-8 bg-[#1A1A1A]/80 backdrop-blur-md text-white border-2 border-[#1A1A1A] rounded-3xl shadow-[8px_8px_0px_0px_rgba(255,95,31,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(255,95,31,1)] transition-all group"
               >
                 <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-white">
                   <Users className="w-8 h-8" />

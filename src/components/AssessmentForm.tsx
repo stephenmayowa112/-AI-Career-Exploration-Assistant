@@ -98,8 +98,8 @@ export function AssessmentForm({ onSubmit, isLoading }: AssessmentFormProps) {
   const isNextDisabled = answers[currentQuestion.id].length === 0;
 
   return (
-    <div className="w-full max-w-2xl mx-auto bg-white rounded-3xl border-2 border-[#1A1A1A] shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] overflow-hidden">
-      <div className="bg-[#F9F6F1] p-4 sm:p-6 border-b-2 border-[#1A1A1A]">
+    <div className="w-full max-w-2xl mx-auto bg-white/60 backdrop-blur-md rounded-3xl border-2 border-[#1A1A1A] shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] overflow-hidden relative z-10">
+      <div className="bg-[#F9F6F1]/50 p-4 sm:p-6 border-b-2 border-[#1A1A1A]">
         <div className="flex items-center justify-between mb-4">
           <span className="text-[10px] font-bold uppercase tracking-widest text-[#1A1A1A]/60">
             Step {step + 1} of {QUESTIONS.length}
@@ -140,7 +140,7 @@ export function AssessmentForm({ onSubmit, isLoading }: AssessmentFormProps) {
                 className={`p-4 text-left rounded-xl border-2 transition-all duration-200 flex items-center justify-between group ${
                   isSelected
                     ? 'border-[#1A1A1A] bg-[#1A1A1A] text-white shadow-[4px_4px_0px_0px_rgba(255,95,31,1)]'
-                    : 'border-[#1A1A1A]/20 hover:border-[#1A1A1A] bg-white text-[#1A1A1A]'
+                    : 'border-[#1A1A1A]/20 hover:border-[#1A1A1A] bg-white/50 text-[#1A1A1A]'
                 }`}
               >
                 <span className={`font-bold ${isSelected ? 'text-white' : 'text-[#1A1A1A]'}`}>
