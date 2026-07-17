@@ -59,7 +59,7 @@ async function startServer() {
       while (attempt < maxRetries) {
         try {
           response = await ai.models.generateContent({
-            model: 'gemini-3.5-flash',
+            model: 'gemini-3.1-flash-lite',
             contents: prompt,
             config: {
                 temperature: 0.7,
@@ -69,10 +69,10 @@ async function startServer() {
           break;
         } catch (e: any) {
           attempt++;
-          if (attempt >= maxRetries || !e.message?.includes('503')) {
+          if (attempt >= maxRetries || (!e.message?.includes('503') && !e.message?.includes('429'))) {
             throw e;
           }
-          await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
+          await new Promise(resolve => setTimeout(resolve, 2000 * attempt));
         }
       }
       
