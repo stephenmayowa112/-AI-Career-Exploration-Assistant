@@ -1,0 +1,8 @@
+{
+  "name": "AI Career Exploration Assistant",
+  "description": "An interactive digital tool designed to help secondary school students in Nigeria discover suitable career paths based on their interests, strengths, and academic performance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
